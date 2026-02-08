@@ -1,91 +1,70 @@
-# A2 – Language Model Demo
+# A3: Make Your Own Machine Translation
 
-This repository contains a trained **LSTM-based Language Model** and a **Dash web application** for interactive text generation with different sampling temperatures.
-
-The demo showcases how temperature and sequence length affect generated text.
+This repository contains the implementation of a simple **English to Nepali machine translation web application**, developed as part of **Assignment 3 (A3)**. The application demonstrates how a Transformer-based sequence-to-sequence model with attention can be integrated into an interactive user interface.
 
 ---
 
-## Prerequisites
+## Overview
 
+For this assignment, the web interface is built using **Dash**. The **entire UI logic and model integration** are implemented within the `app.py` file. The interface is intentionally kept simple and intuitive, consisting of:
 
-- PyTorch & TorchText (**must be compatible versions**)
-- Dash
+* A text input field for the user query (English sentence)
+* A **Translate** button
+* Basic input validation
+* A section to display the translated Nepali output
 
----
-
-## Important: Torch & TorchText Compatibility
-
-Make sure your `torch` and `torchtext` versions are compatible.  
-A recommended stable pairing is:
-
-```bash
-pip install torch==2.1.0 torchtext==0.16.0
-```
-
-If you encounter NumPy or TorchText errors, downgrade NumPy as well:
-
-```bash
-pip install "numpy<2"
-```
+A visual demonstration of the interface is provided as a GIF.
 
 ---
 
-## How to Run the Project
+## Model Integration
 
-### **Step 1: Run the Jupyter Notebook**
+The translation model is integrated into the interface through the following steps:
 
-First, run the notebook to generate all required artifacts (model weights, vocabulary, etc.):
+1. **Vocabulary Loading**
+   The source and target vocabularies are loaded using `torch.load` from PyTorch.
 
-```bash
-main.ipynb
-```
+2. **Model Setup**
+   The Transformer model is initialized by passing the required parameters and loading the trained weights from a checkpoint.
 
-This notebook will:
-- Train / load the LSTM language model
-- Save the model checkpoint (`.pt`)
-- Save the vocabulary (`.pkl`)
+3. **Choice of Attention Mechanism**
+   Among the three attention variants explored (general, multiplicative, and additive), **additive attention** was selected for deployment. This decision was based on its superior performance in terms of lower validation loss and perplexity during experimentation.
 
-**Do not skip this step**, or the web app will not run.
+4. **Text Processing Pipeline**
+   The input text undergoes the following processing stages:
 
----
+   * Tokenization
+   * Numericalization using the loaded vocabulary
+   * Tensor construction with special tokens
 
-### **Step 2: Launch the Dash Web App**
-
-After the notebook finishes successfully, run:
-
-```bash
-python app.py
-```
-
-The application will be deployed locally at:
-
-```
-http://127.0.0.1:8050/
-```
-
-Open this URL in your browser.
+5. **Inference and Output Generation**
+   During inference, the model predicts the next token iteratively. At each step, the token with the **highest probability** is selected and appended to a list. Once decoding is complete, the tokens are joined to form the final translated sentence, which is then displayed to the user.
 
 ---
 
-## Using the Web Interface
+## User Interaction Flow
 
-Once the app is running, you can:
+The application follows a straightforward interaction flow:
 
-1. **Enter a text prompt**
-2. **Select one or more temperatures**
-   - Lower temperature → safer, more repetitive output  
-   - Higher temperature → more diverse, creative output
-3. **Select maximum number of tokens**
-4. Click **Generate**
-
-The app will display generated text for each selected temperature in separate output cards.
+1. The user enters an English sentence into the input field
+2. The user clicks the **Translate** button
+3. The translated Nepali sentence is displayed on the screen
 
 ---
 
-## 🎥 Demo
+## CPU Deployment Note
+
+The models used in this project were **trained on a GPU**. If the application is run on a **CPU-only environment**, the original GPU-trained checkpoints may cause runtime issues.
+
+To address this, a utility script is provided:
+
+* **`convert_checkpoint.py`**
+
+This script converts GPU-trained checkpoints into **CPU-compatible checkpoints**. It should be executed before running `app.py` when deploying the application on a CPU-only machine.
+---
+## Demo
 
 The demo video is available here:
-![Application Demo](demo-A2.gif)
+![Application Demo](demo-a3.gif)
 
 
