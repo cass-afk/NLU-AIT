@@ -1,10 +1,10 @@
-# A3: English → Nepali Translation Web Application
+# A3: Make Your Own Machine Translation
 
 This repository contains the implementation of a simple **English to Nepali machine translation web application**, developed as part of **Assignment 3 (A3)**. The application demonstrates how a Transformer-based sequence-to-sequence model with attention can be integrated into an interactive user interface.
 
 ---
 
-## 📌 Overview
+## Overview
 
 For this assignment, the web interface is built using **Dash**. The **entire UI logic and model integration** are implemented within the `app.py` file. The interface is intentionally kept simple and intuitive, consisting of:
 
@@ -17,16 +17,7 @@ A visual demonstration of the interface is provided as a GIF.
 
 ---
 
-## 🎥 Demo
-
-* **`demo-a3.gif`**: Demonstrates the functionality and appearance of the translation interface.
-* The demo GIF is located inside the **`static/`** folder.
-
-This GIF shows the full user interaction flow, from entering a sentence to viewing the translated output.
-
----
-
-## 🧠 Model Integration
+## Model Integration
 
 The translation model is integrated into the interface through the following steps:
 
@@ -51,7 +42,7 @@ The translation model is integrated into the interface through the following ste
 
 ---
 
-## 🔄 User Interaction Flow
+## User Interaction Flow
 
 The application follows a straightforward interaction flow:
 
@@ -61,7 +52,7 @@ The application follows a straightforward interaction flow:
 
 ---
 
-## 💻 CPU Deployment Note
+## CPU Deployment Note
 
 The models used in this project were **trained on a GPU**. If the application is run on a **CPU-only environment**, the original GPU-trained checkpoints may cause runtime issues.
 
@@ -70,22 +61,10 @@ To address this, a utility script is provided:
 * **`convert_checkpoint.py`**
 
 This script converts GPU-trained checkpoints into **CPU-compatible checkpoints**. It should be executed before running `app.py` when deploying the application on a CPU-only machine.
-
 ---
+## Demo
 
-## 📁 Key Files
+The demo video is available here:
+![Application Demo](demo-a3.gif)
 
-* `app.py` – Main application file containing the Dash UI and model inference logic
-* `convert_checkpoint.py` – Utility script to convert GPU checkpoints for CPU usage
-* `static/demo-a3.gif` – Demo of the web interface
-* `model/` – Directory containing model checkpoints and vocabulary files
 
----
-
-## ✅ Summary
-
-This project demonstrates the end-to-end deployment of a Transformer-based translation model within a web application. It highlights model selection based on experimental results, practical deployment considerations, and user-focused interface design using Dash.
-
----
-
-If you are evaluating this project, please refer to **`demo-a3.gif`** for a quick overview of the application in action.
