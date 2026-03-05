@@ -85,9 +85,9 @@ As the assignment instructs, we compare our baselne and our fine tuned DPO model
 
 The win rate for the DPO model is calculated using the AlpacaEval scoring formula:
 
-\[
-Win\ Rate = \frac{Wins_B + 0.5 \times Ties}{Total\ Comparisons} \times 100
-\]
+
+#### Win Rate = (Wins_B + (0.5* Ties) * 100 ) / Total Comparisons
+
 
 Where:
 
@@ -101,23 +101,9 @@ From the evaluation results:
 - Ties = **8**
 - Total Samples = **15**
 
-### Calculation
 
-\[
-Win\ Rate = \frac{2 + 0.5 \times 8}{15} \times 100
-\]
-
-\[
-Win\ Rate = \frac{2 + 4}{15} \times 100
-\]
-
-\[
-Win\ Rate = \frac{6}{15} \times 100
-\]
-
-\[
-Win\ Rate = 40\%
-\]
+Therefore,
+##### Win\ Rate = 40\%
 
 ### Final Result
 
