@@ -1,0 +1,82 @@
+[
+  {
+    "question": "What is the difference between word types and word instances?",
+    "ground_truth_answer": "Word types are the number of distinct words in a corpus, while word instances are the total word instance number N of running words."
+  },
+  {
+    "question": "What is the difference between orthographic words and grammatical words?",
+    "ground_truth_answer": "Orthographic words are words based on our English writing system, while grammatical words function as multiple words in a sentence."
+  },
+  {
+    "question": "What does an inﬂectional morpheme do?",
+    "ground_truth_answer": "It tends to play a syntactic role, such as marking agreement."
+  },
+  {
+    "question": "What is the difference between analytic and synthetic languages?",
+    "ground_truth_answer": "Analytic languages have one morpheme per word, while synthetic languages have many morphemes per word."
+  },
+  {
+    "question": "What is UTF-32 encoding?",
+    "ground_truth_answer": "It's a 4-byte representation that makes files 4 times longer than ASCII."
+  },
+  {
+    "question": "What does UTF-8 do for characters above 127?",
+    "ground_truth_answer": "It uses fewer bytes for them, encoding them as a sequence of two, three, or four bytes."
+  },
+  {
+    "question": "What is the advantage of UTF-8 over UTF-32?",
+    "ground_truth_answer": "It's relatively efficient, using fewer bytes for commonly-encountered characters."
+  },
+  {
+    "question": "What does BPE do in the BPE encoder?",
+    "ground_truth_answer": "It tokenizes a test sentence using merges learned from the training data."
+  },
+  {
+    "question": "What happens to unseen combinations like revisit or rearrange in BPE?",
+    "ground_truth_answer": "Morphemes like the re- prefix are created."
+  },
+  {
+    "question": "How does BPE handle Unicode input?",
+    "ground_truth_answer": "It treats each byte of UTF-8-encoded text as input to BPE."
+  },
+  {
+    "question": "What is the effect of BPE on words in lower resource languages?",
+    "ground_truth_answer": "They tend to get their words split up into shorter tokens."
+  },
+  {
+    "question": "How do you escape a special character like '\\.' in a regex?",
+    "ground_truth_answer": "precede it with a backslash"
+  },
+  {
+    "question": "What is the purpose of rule-based tokenization?",
+    "ground_truth_answer": "To pre-define a standard and implement rules for tokenization."
+  },
+  {
+    "question": "What is the minimum edit distance used for in the given context?",
+    "ground_truth_answer": "For text matching and pattern recognition."
+  },
+  {
+    "question": "What does dynamic programming solve?",
+    "ground_truth_answer": "Problems by combining solutions to subproblems."
+  },
+  {
+    "question": "What is the minimum edit distance algorithm?",
+    "ground_truth_answer": "Named by Wagner and Fischer (1974), independently discovered by many people."
+  },
+  {
+    "question": "How is the edit distance between two strings defined?",
+    "ground_truth_answer": "As the minimum number of operations required to transform one string into another."
+  },
+  {
+    "question": "Which package is used for computing edit distance?",
+    "ground_truth_answer": "Unix diff and the NIST sclite program"
+  },
+  {
+    "question": "What does a clitic do?",
+    "ground_truth_answer": "Acts syntactically like a word but is reduced in form and attached to another word"
+  },
+  {
+    "question": "What is the disadvantage of UTF-32 encoding?",
+    "ground_truth_answer": "It makes every file 4 times longer."
+  }
+]

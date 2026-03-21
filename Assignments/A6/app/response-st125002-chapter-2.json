@@ -1,0 +1,122 @@
+[
+  {
+    "question": "What is the difference between word types and word instances?",
+    "ground_truth_answer": "Word types are the number of distinct words in a corpus, while word instances are the total word instance number N of running words.",
+    "naive_rag_answer": "Word types refer to unique lexical items in a language, such as nouns, verbs, and adjectives, while word instances are specific occurrences of those items within a text. The distinction becomes complex in languages like Chinese and Japanese due to their lack of orthographic words and the difficulty in defining word boundaries.",
+    "contextual_retrieval_answer": "Word types refer to unique lexical items in a language, while word instances represent specific occurrences of those items within a corpus. The context mentions that in Chinese, for instance, the distinction between words and characters is complex due to the absence of orthographic word boundaries, illustrating that a word type (like \"明\" in \"姚明\") can be treated differently depending on the definition used, whereas a word instance would be the actual occurrence of \"姚明\" in a sentence."
+  },
+  {
+    "question": "What is the difference between orthographic words and grammatical words?",
+    "ground_truth_answer": "Orthographic words are words based on our English writing system, while grammatical words function as multiple words in a sentence.",
+    "naive_rag_answer": "Orthographic words refer to words that are clearly delineated by spaces in written texts, such as in English where \"read\" and \"article\" are separate orthographic words. Grammatical words, on the other hand, are words that serve grammatical functions rather than conveying content, like articles (\"a\", \"the\") and prepositions (\"by\", \"with\"). In languages like Chinese, there are no orthographic words, complicating the definition of what constitutes a word.",
+    "contextual_retrieval_answer": "Orthographic words refer to units of meaning in a language that are marked by spaces or other orthographic conventions, allowing for clear segmentation. Grammatical words, on the other hand, are the primary units of processing in modern NLP systems, consisting of morphemes that include roots and affixes, with roots providing the main meaning and affixes adding additional meanings. In languages without orthographic words, such as Chinese, the distinction between orthographic and grammatical words becomes less clear, as words are formed by characters representing morphemes without clear boundaries."
+  },
+  {
+    "question": "What does an inﬂectional morpheme do?",
+    "ground_truth_answer": "It tends to play a syntactic role, such as marking agreement.",
+    "naive_rag_answer": "An inﬂectional morpheme modifies the syntactic role of a word, such as marking agreement for tense or number, and typically appears as a suffix or prefix. Examples include the plural -s on nouns and the past tense -ed on verbs in English.",
+    "contextual_retrieval_answer": "An inﬂectional morpheme plays a syntactic role, such as marking agreement, and examples include the plural suffix -s on nouns and the past tense suffix -ed on verbs in English. These morphemes tend to be productive, obligatory, and their meanings are predictable."
+  },
+  {
+    "question": "What is the difference between analytic and synthetic languages?",
+    "ground_truth_answer": "Analytic languages have one morpheme per word, while synthetic languages have many morphemes per word.",
+    "naive_rag_answer": "The context does not directly address the difference between analytic and synthetic languages. It discusses morphological typology and word segmentation across various languages, but does not provide a clear distinction between analytic and synthetic languages as defined in linguistics.",
+    "contextual_retrieval_answer": "Analytic languages, like Farsi and English, typically have fewer morphemes per word, making them easier to tokenize compared to synthetic languages such as Koryak and Yakut, which have many morphemes per word. This difference affects the complexity of segmenting words during tokenization in natural language processing."
+  },
+  {
+    "question": "What is UTF-32 encoding?",
+    "ground_truth_answer": "It's a 4-byte representation that makes files 4 times longer than ASCII.",
+    "naive_rag_answer": "UTF-32 encoding uses 4 bytes per character to represent Unicode code points, but it is not commonly used due to its inefficiency compared to UTF-8, which uses variable lengths of 1 to 4 bytes per character.",
+    "contextual_retrieval_answer": "UTF-32 encoding uses 4 bytes (32 bits) to represent each Unicode code point, which is why it's mentioned in the context. However, UTF-32 is not commonly used because it results in larger file sizes compared to UTF-8, which is more efficient and widely adopted."
+  },
+  {
+    "question": "What does UTF-8 do for characters above 127?",
+    "ground_truth_answer": "It uses fewer bytes for them, encoding them as a sequence of two, three, or four bytes.",
+    "naive_rag_answer": "UTF-8 efficiently encodes characters above 127 by using sequences of 2, 3, or 4 bytes. For characters within the first 128 code points (ASCII characters), UTF-8 uses a single byte. For characters beyond 128, it employs variable-length encoding where higher code points require more bytes to represent.",
+    "contextual_retrieval_answer": "UTF-8 efficiently encodes characters above 127 by using sequences of two, three, or four bytes, where the first few bits indicate the length of the sequence. This allows characters beyond the initial 127 ASCII characters to be represented without needing additional bytes, maintaining efficiency and compatibility with ASCII."
+  },
+  {
+    "question": "What is the advantage of UTF-8 over UTF-32?",
+    "ground_truth_answer": "It's relatively efficient, using fewer bytes for commonly-encountered characters.",
+    "naive_rag_answer": "The advantage of UTF-8 over UTF-32 is its efficiency in terms of storage size. UTF-8 uses fewer bytes for commonly encountered characters, whereas UTF-32 requires 4 bytes per character, making UTF-8 files significantly smaller. Additionally, UTF-8 is compatible with ASCII, ensuring backward compatibility without the presence of zero bytes that could disrupt older systems.",
+    "contextual_retrieval_answer": "The advantage of UTF-8 over UTF-32 is its efficiency in terms of storage space. UTF-8 uses fewer bytes for commonly encountered characters, whereas UTF-32 requires 4 bytes per character, making UTF-8 files significantly smaller and more efficient."
+  },
+  {
+    "question": "What does BPE do in the BPE encoder?",
+    "ground_truth_answer": "It tokenizes a test sentence using merges learned from the training data.",
+    "naive_rag_answer": "In the BPE encoder, the algorithm tokenizes a test sentence by first breaking it down into individual characters. It then applies a series of rules to replace sequences of characters with newly created tokens based on the most frequent neighboring pairs identified during the training phase. This process continues until a predetermined number of merges is reached, creating a vocabulary of tokens that can represent the original text efficiently.",
+    "contextual_retrieval_answer": "The BPE encoder in the BPE encoder module merges frequent neighboring tokens from the training data to create longer tokens. It runs on the test data and applies the merges it learned during the training phase, segmenting each test sentence word into characters before applying the rules sequentially."
+  },
+  {
+    "question": "What happens to unseen combinations like revisit or rearrange in BPE?",
+    "ground_truth_answer": "Morphemes like the re- prefix are created.",
+    "naive_rag_answer": "In the BPE (Byte Pair Encoding) process, unseen combinations like \"revisit\" or \"rearrange\" are not directly addressed since BPE primarily focuses on merging the most frequent adjacent symbol pairs based on the training corpus. However, as BPE learns and merges these pairs, it implicitly creates knowledge about morphemes such as the \"re-\" prefix and \"new\" without spaces, which can appear in unseen combinations.",
+    "contextual_retrieval_answer": "The context provided does not discuss unseen combinations like \"revisit\" or \"rearrange\" in BPE. The given text focuses on the BPE algorithm's process of merging frequent neighboring tokens in a corpus for subword tokenization, but does not cover specific cases like revisiting or rearranging unseen combinations."
+  },
+  {
+    "question": "How does BPE handle Unicode input?",
+    "ground_truth_answer": "It treats each byte of UTF-8-encoded text as input to BPE.",
+    "naive_rag_answer": "BPE handles Unicode input by encoding the characters into a sequence of code points, which are then used to create tokens. Each code point represents a specific character, allowing BPE to process and tokenize characters from various scripts and languages supported by Unicode.",
+    "contextual_retrieval_answer": "Byte-Pair Encoding (BPE) handles Unicode input by treating it as sequences of Unicode code points. When processing text, BPE tokenizes the input into units that are typically about the size of morphemes or words, but may also include smaller units like characters. This approach allows BPE to handle Unicode text efficiently, breaking down the text into manageable subword units that can be processed consistently across different texts."
+  },
+  {
+    "question": "What is the effect of BPE on words in lower resource languages?",
+    "ground_truth_answer": "They tend to get their words split up into shorter tokens.",
+    "naive_rag_answer": "The context provided does not specifically address the effect of BPE on words in lower resource languages. It discusses the BPE algorithm and its application in general, but does not provide information about its impact on words in specific language resources.",
+    "contextual_retrieval_answer": "The context provided does not directly address the specific effect of BPE on words in lower resource languages. It focuses more on the general mechanism of BPE subword tokenization, including its application to both written and spoken language, and mentions that for multilingual systems, the tokens can be dominated by English, potentially limiting representation for other languages. Therefore, I cannot provide an answer about the effect on lower resource languages based solely on the given context."
+  },
+  {
+    "question": "How do you escape a special character like '\\.' in a regex?",
+    "ground_truth_answer": "precede it with a backslash",
+    "naive_rag_answer": "To escape a special character like '\\.' in a regex, you precede it with a backslash (\\). For example, to match a literal '.', you would write it as r'\\.'.",
+    "contextual_retrieval_answer": "To escape a special character like '\\.' in a regex, you precede it with a backslash (\\). For example, to match a literal '.' character, you would write it as r'\\.'. This tells the regex engine to treat the '.' literally rather than as a wildcard character."
+  },
+  {
+    "question": "What is the purpose of rule-based tokenization?",
+    "ground_truth_answer": "To pre-define a standard and implement rules for tokenization.",
+    "naive_rag_answer": "The purpose of rule-based tokenization, as described, is to predefine standard rules for tokenizing text. These rules include separating punctuation as separate tokens, keeping punctuation within words intact, handling special characters and numbers, and expanding certain clitic contractions. This approach ensures consistency and relevance across different texts and languages, facilitating efficient processing and analysis.",
+    "contextual_retrieval_answer": "The purpose of rule-based tokenization, as discussed in the context, is to predefine standard rules for breaking down text into tokens, addressing complexities like punctuation handling, special characters, and multiword expressions. This approach ensures consistency and relevance across different linguistic contexts, especially important for tasks like named entity recognition."
+  },
+  {
+    "question": "What is the minimum edit distance used for in the given context?",
+    "ground_truth_answer": "For text matching and pattern recognition.",
+    "naive_rag_answer": "The minimum edit distance is used to quantify the minimum number of editing operations (insertions, deletions, substitutions) required to transform one string into another. In the context provided, it is computed using dynamic programming, where the minimum edit distance between two strings is found by considering the minimum cost of transforming parts of the strings into each other.",
+    "contextual_retrieval_answer": "The minimum edit distance used in the given context is a quantitative measure of string similarity, specifically defined as the minimum number of editing operations (insertions, deletions, substitutions) required to transform one string into another. This concept is applied to both single words and entire strings, as illustrated through alignments and algorithms for computing the minimum edit distance."
+  },
+  {
+    "question": "What does dynamic programming solve?",
+    "ground_truth_answer": "Problems by combining solutions to subproblems.",
+    "naive_rag_answer": "Dynamic programming solves problems by breaking them down into simpler subproblems and solving each subproblem only once, storing their results—avoiding redundant computations—and combining these results to solve the original problem. It is applied in algorithms like the Viterbi algorithm and the CKY algorithm, and in computing the minimum edit distance between two strings, where the solution to the problem is derived from the solutions to smaller subproblems.",
+    "contextual_retrieval_answer": "Dynamic programming solves problems by breaking them down into simpler subproblems and solving each subproblem only once, storing their results for future use. It is applied in natural language processing tasks like calculating the minimum edit distance between two strings, where the solution to a larger problem is derived from the solutions to smaller subproblems."
+  },
+  {
+    "question": "What is the minimum edit distance algorithm?",
+    "ground_truth_answer": "Named by Wagner and Fischer (1974), independently discovered by many people.",
+    "naive_rag_answer": "The minimum edit distance algorithm calculates the minimum number of single-character edits (insertions, deletions, or substitutions) required to transform one string into another. It uses dynamic programming to build a matrix where each cell's value represents the minimum edit distance between substrings of the original strings. The algorithm iteratively computes values for larger substrings based on previously computed values, aiming to find the least costly transformation path.",
+    "contextual_retrieval_answer": "The minimum edit distance algorithm calculates the minimum number of operations (insertions, deletions, substitutions) required to transform one string into another. It uses dynamic programming to build a matrix where each cell represents the minimum edit distance to transform a prefix of the first string into a prefix of the second string. By backtracking through this matrix, one can determine the sequence of operations that achieves this minimum distance, effectively providing an alignment between the two strings."
+  },
+  {
+    "question": "How is the edit distance between two strings defined?",
+    "ground_truth_answer": "As the minimum number of operations required to transform one string into another.",
+    "naive_rag_answer": "The edit distance between two strings is defined as the minimum number of editing operations (insertion, deletion, substitution) required to transform one string into another. This is quantified by the Levenshtein distance, where each operation has a cost, typically 1 for insertion and deletion, and 2 for substitution (except when substituting a letter with itself, which has a cost of 0). The algorithm computes this distance using dynamic programming, filling a matrix where each cell represents the minimum edit distance between substrings of the original strings.",
+    "contextual_retrieval_answer": "The edit distance between two strings is defined as the minimum number of editing operations (insertions, deletions, substitutions) required to transform one string into another. This is formalized as the minimum edit distance, which is computed using algorithms like the Levenshtein distance, where each type of operation (insertion, deletion, substitution) is assigned a cost, typically 1 for each."
+  },
+  {
+    "question": "Which package is used for computing edit distance?",
+    "ground_truth_answer": "Unix diff and the NIST sclite program",
+    "naive_rag_answer": "The package/package mentioned directly in the context for computing edit distance is not specified. However, the context describes the Levenshtein distance algorithm, which is implemented in the code provided. This algorithm computes the minimum edit distance and can be extended to find alignments, though the specific package name is not given.",
+    "contextual_retrieval_answer": "The Levenshtein distance algorithm is used for computing the edit distance, as discussed in the context where the minimum edit distance algorithm is presented, along with its application in finding the minimum cost alignment between two strings."
+  },
+  {
+    "question": "What does a clitic do?",
+    "ground_truth_answer": "Acts syntactically like a word but is reduced in form and attached to another word",
+    "naive_rag_answer": "A clitic is a word-like element that attaches to a host word, often a pronoun, and typically serves grammatical functions like agreement or emphasis. However, the provided context does not specifically define or give examples of clitics beyond mentioning them in passing within discussions of morphological typology and subword tokenization.",
+    "contextual_retrieval_answer": "A clitic is a word-like element that attaches to a host word, typically a pronoun or determiner, and functions grammatically but phonologically as part of the host. Examples provided include 'l’' in French 'l’opera', prepositions in Arabic like 'b', and conjunctions in Arabic like 'w'."
+  },
+  {
+    "question": "What is the disadvantage of UTF-32 encoding?",
+    "ground_truth_answer": "It makes every file 4 times longer.",
+    "naive_rag_answer": "The disadvantage of UTF-32 encoding is that it makes every file 4 times longer than it would be in ASCII due to the 4-byte representation of each character, leading to files filled with unnecessary zeros that cause issues with ASCII-based systems expecting a 0 byte as an end-of-string marker.",
+    "contextual_retrieval_answer": "The disadvantage of UTF-32 encoding, as mentioned, is that it makes every file 4 times longer than it would be in ASCII, leading to files being \"really big and full of zeros.\" Additionally, having zeros in the file can cause issues with backwards compatibility for ASCII-based systems."
+  }
+]

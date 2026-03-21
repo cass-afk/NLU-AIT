@@ -1,0 +1,262 @@
+[
+  {
+    "group_id": 0,
+    "paragraph_ids": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "question": "What is the difference between word types and word instances?",
+    "answer": "Word types are the number of distinct words in a corpus, while word instances are the total word instance number N of running words.",
+    "evidence_excerpt": "Word types word type are the number of distinct words in a corpus; if the set of words in the vocabulary is V, the number of types is the vocabulary size |V|. Word instances are the total word instance number N of running words.",
+    "qa_id": 1
+  },
+  {
+    "group_id": 0,
+    "paragraph_ids": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "question": "What is the difference between orthographic words and grammatical words?",
+    "answer": "Orthographic words are words based on our English writing system, while grammatical words function as multiple words in a sentence.",
+    "evidence_excerpt": "For example, while orthographically I'm is one word, grammatically it functions as two words: the subject pronoun I and the verb 'm, short for am.",
+    "qa_id": 2
+  },
+  {
+    "group_id": 1,
+    "paragraph_ids": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "question": "What does an inﬂectional morpheme do?",
+    "answer": "It tends to play a syntactic role, such as marking agreement.",
+    "evidence_excerpt": "Inﬂectional morphemes tend to play a syntactic role, such as marking agreement. For example, English has the inﬂectional morpheme -s (or -es) for marking the plural on nouns and the inﬂectional morpheme -ed for marking the past tense on verbs.",
+    "qa_id": 3
+  },
+  {
+    "group_id": 1,
+    "paragraph_ids": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "question": "What is the difference between analytic and synthetic languages?",
+    "answer": "Analytic languages have one morpheme per word, while synthetic languages have many morphemes per word.",
+    "evidence_excerpt": "The first dimension is the number of morphemes per word. In some languages, like Vietnamese and Cantonese, each word on average has just over one morpheme. We call languages at this end of the scale isolating languages. For example each isolating word in the following Cantonese sentence has one morpheme (and one syllable).",
+    "qa_id": 4
+  },
+  {
+    "group_id": 2,
+    "paragraph_ids": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "question": "What is UTF-32 encoding?",
+    "answer": "It's a 4-byte representation that makes files 4 times longer than ASCII.",
+    "evidence_excerpt": "With this 4-byte representation the word hello would be encoded as the following set of bytes: 00 00 00 68 00 00 00 65 00 00 00 6C 00 00 00 6C 00 00 00 6F But we don't use this encoding because it makes every file 4 times longer than it would have been in ASCII.",
+    "qa_id": 5
+  },
+  {
+    "group_id": 2,
+    "paragraph_ids": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "question": "What does UTF-8 do for characters above 127?",
+    "answer": "It uses fewer bytes for them, encoding them as a sequence of two, three, or four bytes.",
+    "evidence_excerpt": "For a given code point in the From-To range, the bit value in column 2 is packed into 1, 2, 3, or 4 bytes. UTF-8 represents characters efﬁciently by writing some characters using fewer bytes on average, by writing some characters using fewer bytes and some using more bytes.",
+    "qa_id": 6
+  },
+  {
+    "group_id": 2,
+    "paragraph_ids": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "question": "What is the advantage of UTF-8 over UTF-32?",
+    "answer": "It's relatively efficient, using fewer bytes for commonly-encountered characters.",
+    "evidence_excerpt": "UTF-8 has a number of advantages. It's relatively efﬁcient, using fewer bytes for commonly-encountered characters, it doesn't use zero bytes (except when literally representing the NULL character which is U+0000), it's backwards compatible with ASCII, and it's self-synchronizing, meaning that if a file is corrupted, it's always possible to ﬁnd the start of the next or prior character just by moving up to 3 bytes left or right.",
+    "qa_id": 7
+  },
+  {
+    "group_id": 3,
+    "paragraph_ids": [
+      12,
+      13,
+      14,
+      15
+    ],
+    "question": "What does BPE do in the BPE encoder?",
+    "answer": "It tokenizes a test sentence using merges learned from the training data.",
+    "evidence_excerpt": "Once we've learned our vocabulary, the BPE encoder is used to tokenize a test sentence. The encoder just runs on the test data the merges we have learned from the training data.",
+    "qa_id": 8
+  },
+  {
+    "group_id": 3,
+    "paragraph_ids": [
+      12,
+      13,
+      14,
+      15
+    ],
+    "question": "What happens to unseen combinations like revisit or rearrange in BPE?",
+    "answer": "Morphemes like the re- prefix are created.",
+    "evidence_excerpt": "But the merges also created knowledge of morphemes like the re- prefix (that might appear in perhaps unseen combinations like revisit or rearrange), or the morpheme new without an initial space (hence word-internal) that might appear at the start of sentences or in words unseen in training like anew.",
+    "qa_id": 9
+  },
+  {
+    "group_id": 3,
+    "paragraph_ids": [
+      12,
+      13,
+      14,
+      15
+    ],
+    "question": "How does BPE handle Unicode input?",
+    "answer": "It treats each byte of UTF-8-encoded text as input to BPE.",
+    "evidence_excerpt": "We normally run BPE on the individual bytes of UTF-8-encoded text. That is, we take a Unicode representations of text as a series of code points, encode it in bytes using UTF-8, and we treat each of these individual bytes as the input to BPE.",
+    "qa_id": 10
+  },
+  {
+    "group_id": 3,
+    "paragraph_ids": [
+      12,
+      13,
+      14,
+      15
+    ],
+    "question": "What is the effect of BPE on words in lower resource languages?",
+    "answer": "They tend to get their words split up into shorter tokens.",
+    "evidence_excerpt": "For example let's look at a Spanish sentence from a recipe for plantains, together with an English translation. The English has 18 tokens; each of the 14 words is a token (none of the words are split into multiple tokens): By contrast, the original 16 words in Spanish have been encoded into 33 tokens, a much larger number. Notice that many basic words have been broken into pieces.",
+    "qa_id": 11
+  },
+  {
+    "group_id": 5,
+    "paragraph_ids": [
+      20,
+      21,
+      22,
+      23
+    ],
+    "question": "How do you escape a special character like '\\.' in a regex?",
+    "answer": "precede it with a backslash",
+    "evidence_excerpt": "Regex Match First Patterns Matched \\.[a-zA-Z0-9_] a non-alphanumeric",
+    "qa_id": 12
+  },
+  {
+    "group_id": 6,
+    "paragraph_ids": [
+      24,
+      25,
+      26,
+      27
+    ],
+    "question": "What is the purpose of rule-based tokenization?",
+    "answer": "To pre-define a standard and implement rules for tokenization.",
+    "evidence_excerpt": "In rule-based tokenization, we pre-deﬁne a standard and implement rules to implement that kind of tokenization.",
+    "qa_id": 13
+  },
+  {
+    "group_id": 6,
+    "paragraph_ids": [
+      24,
+      25,
+      26,
+      27
+    ],
+    "question": "What is the minimum edit distance used for in the given context?",
+    "answer": "For text matching and pattern recognition.",
+    "evidence_excerpt": "Minimum edit distance is used for text matching and pattern recognition, as shown in the example provided.",
+    "qa_id": 14
+  },
+  {
+    "group_id": 7,
+    "paragraph_ids": [
+      28,
+      29,
+      30,
+      31
+    ],
+    "question": "What does dynamic programming solve?",
+    "answer": "Problems by combining solutions to subproblems.",
+    "evidence_excerpt": "Dynamic programming is the name for a class of algorithms, first introduced by Bellman (1957), that apply a table-driven method to solve problems by combining solutions to subproblems.",
+    "qa_id": 15
+  },
+  {
+    "group_id": 7,
+    "paragraph_ids": [
+      28,
+      29,
+      30,
+      31
+    ],
+    "question": "What is the minimum edit distance algorithm?",
+    "answer": "Named by Wagner and Fischer (1974), independently discovered by many people.",
+    "evidence_excerpt": "The minimum edit distance algorithm was named by Wagner and Fischer minimum edit distance algorithm (1974) but independently discovered by many people (see the Historical Notes section of Chapter 17).",
+    "qa_id": 16
+  },
+  {
+    "group_id": 7,
+    "paragraph_ids": [
+      28,
+      29,
+      30,
+      31
+    ],
+    "question": "How is the edit distance between two strings defined?",
+    "answer": "As the minimum number of operations required to transform one string into another.",
+    "evidence_excerpt": "Given two strings, the source string X of length n, and target string Y of length m, we'll deﬁne D[i, j] as the edit distance between X[1..i] and Y[1..j], i.e., the ﬁrst i characters of X and the ﬁrst j characters of Y.",
+    "qa_id": 17
+  },
+  {
+    "group_id": 8,
+    "paragraph_ids": [
+      32,
+      33,
+      34,
+      35
+    ],
+    "question": "Which package is used for computing edit distance?",
+    "answer": "Unix diff and the NIST sclite program",
+    "evidence_excerpt": "Unix diff and the NIST sclite program",
+    "qa_id": 18
+  },
+  {
+    "group_id": 1,
+    "paragraph_ids": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "question": "What does a clitic do?",
+    "answer": "Acts syntactically like a word but is reduced in form and attached to another word",
+    "evidence_excerpt": "A clitic is a morpheme that acts clitic syntactically like a word but is reduced in form and attached (phonologically and sometimes orthographically) to another word.",
+    "qa_id": 19
+  },
+  {
+    "group_id": 2,
+    "paragraph_ids": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "question": "What is the disadvantage of UTF-32 encoding?",
+    "answer": "It makes every file 4 times longer.",
+    "evidence_excerpt": "With this 4-byte representation the word hello would be encoded as the following set of bytes: 00 00 00 68 00 00 00 65 00 00 00 6C 00 00 00 6C 00 00 00 6F But we don't use this encoding (which is technically called UTF-32) because it makes every file 4 times longer than it would have been in ASCII",
+    "qa_id": 20
+  }
+]
