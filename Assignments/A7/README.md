@@ -119,10 +119,10 @@ Created 4 project phase events via Telegram command:
 
 | Phase | Event Name | Date | Time |
 |-------|------------|------|------|
-| 1st | Literature Review | April 7, 2026 | 9:00 AM - 10:00 AM |
-| 2nd | Project Proposal | April 14, 2026 | 9:00 AM - 10:00 AM |
+| 1st | Literature Review | April 7, 2026 | 10:00 AM - 11:00 AM |
+| 2nd | Project Proposal | April 14, 2026 | 11:00 AM - 12:00 PM |
 | 3rd | Update Progress | April 21, 2026 | 9:00 AM - 10:00 AM |
-| 4th | Final (Presentation) | April 28, 2026 | 9:00 AM - 10:00 AM |
+| 4th | Final (Presentation) | April 28, 2026 | 8:30 AM - 9:30 AM |
 
 **Prompt Used:**
 ```
